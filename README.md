@@ -104,7 +104,7 @@ cd /home/snail/pill_reminder/code/node
 node receiver.js &
 ```
 
-## cron（已配置）
+## cron 配置
 
 ```
 * * * * * flock -n /tmp/pill-reminder.lock python3 /home/snail/pill_reminder/code/scheduler.py

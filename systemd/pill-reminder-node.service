@@ -1,0 +1,16 @@
+[Unit]
+Description=Pill Reminder Node.js Long Connection Service
+After=network.target
+
+[Service]
+Type=simple
+User=snail
+WorkingDirectory=/home/snail/pill_reminder/code/node
+ExecStart=/usr/bin/node /home/snail/pill_reminder/code/node/receiver.js
+Restart=always
+RestartSec=5
+StandardOutput=append:/home/snail/pill_reminder/code/logs/receiver.log
+StandardError=append:/home/snail/pill_reminder/code/logs/receiver.log
+
+[Install]
+WantedBy=multi-user.target

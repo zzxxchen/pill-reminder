@@ -1,0 +1,29 @@
+# 飞书 Bot 配置
+# 请替换为你的实际配置值
+feishu:
+  app_id: "YOUR_APP_ID"
+  app_secret: "YOUR_APP_SECRET"
+  user_id: "YOUR_USER_OPEN_ID"  # 消息接收用户的 open_id
+  bot_name: "吃药提醒"
+
+# 提醒时间配置（24小时制，时区: Asia/Shanghai）
+reminder:
+  slots:
+    - "10:00"
+    - "15:00"
+    - "20:00"
+  interval_minutes: 5
+  max_duration_hours: 12
+
+# 确认文本（必须精确匹配）
+confirmation:
+  valid_text: "吃过药了"
+
+# 文件路径
+paths:
+  db: "/home/snail/pill_reminder/code/state.db"
+  log_dir: "/home/snail/pill_reminder/code/logs"
+  log_file: "reminder.log"
+
+# cron 配置示例
+# * * * * * flock -n /tmp/pill-reminder.lock python3 /home/snail/pill_reminder/code/scheduler.py

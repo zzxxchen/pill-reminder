@@ -1,0 +1,14 @@
+{
+  "name": "pill-reminder-receiver",
+  "version": "1.0.0",
+  "description": "飞书长连接接收服务",
+  "main": "receiver.js",
+  "scripts": {
+    "start": "node receiver.js"
+  },
+  "dependencies": {
+    "@larksuiteoapi/core": "^1.0.14",
+    "@larksuiteoapi/node-sdk": "^1.0.0",
+    "yaml": "^2.8.4"
+  }
+}

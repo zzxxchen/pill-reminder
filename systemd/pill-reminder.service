@@ -1,0 +1,19 @@
+[Unit]
+Description=Pill Reminder Webhook Service
+After=network.target
+
+[Service]
+Type=simple
+User=snail
+WorkingDirectory=/home/snail/pill_reminder/code
+Environment="PYTHONPATH=/home/snail/pill_reminder/code"
+Environment="PILL_DB_PATH=/home/snail/pill_reminder/code/state.db"
+ExecStart=/usr/bin/python3 /home/snail/pill_reminder/code/webhook.py
+Restart=always
+RestartSec=5
+
+# 日志配置 - 由 Python logging 处理
+# 日志文件: /home/snail/pill_reminder/code/logs/webhook.log
+
+[Install]
+WantedBy=multi-user.target
